@@ -10,14 +10,17 @@
 //******************************************************************************
 
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <cstring>
+#include <algorithm>
 #include <iomanip>
 
 using namespace std;
+
 const int NUM_SYMBOLS1 = 38, NUM_SYMBOLS2 = 5;
-const string TITLE = "HEX-DECIMAL-BINARY CONVERTER";
+
+const string TITLE = "HEX-DECIMAL-BINARY CONVERTER", 
+             USER_PROMPT = "Enter your string to convert (q to quit): ";
+
 const char SYMBOL = '*';
 
 int hexChartoInt (char hexDigit);
@@ -32,8 +35,23 @@ string hexToBinary (const string& strNumber);
 string binaryToHex (const string& strNumber);
 
 int main () {
+  
+  char base;
+  string userChoice;
 
   printTitle (TITLE, SYMBOL);
+  userChoice = getNumber (USER_PROMPT);
+
+  while (userChoice != "q") {
+    base = getBase (userChoice);
+    
+    
+    
+    
+    
+    
+    userChoice = getNumber (USER_PROMPT);
+  }
   
   return EXIT_SUCCESS;
 }
@@ -43,11 +61,18 @@ int hexChartoInt (char hexDigit) {
 }
 
 char getBase (const string& strNumber) {
+  char userBase;
 
+  
 }
 
 string getNumber (const string& prompt) {
+  string userNum;
 
+  cout << prompt;
+  cin >> userNum;
+
+  return userNum;
 }
 
 void printTitle (const string& myTitle, char symbol) {
